@@ -4,12 +4,12 @@
   "private": true,
   "engines": {
     "node": "14.19.1",
-    "npm": "6.14.16"
+    "npm": "6.14.16",
+    "yarn": "1.22.17"
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-    "build": "node build"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
