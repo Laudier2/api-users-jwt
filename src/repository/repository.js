@@ -1,35 +1,35 @@
 const mongoose = require('mongoose');
 const Users = require('../modules/users');
 
-exports.autenticate = async(data) => {
+exports.autenticate = async (data) => {
     const res = await Users
-    .findOne({
-        email: data.email, 
-        password: data.password
-    })
+        .findOne({
+            email: data.email,
+            password: data.password
+        })
     return res;
 }
 
-exports.get = async() => {
+exports.get = async () => {
     const res = await Users
-    .find({
-    }, 'name email password imagem')
+        .find({
+        }, 'name email password imagem phone')
     return res;
 }
 
-exports.getBayId = async(id) => {
+exports.getBayId = async (id) => {
     const res = await Users.findById(id);
     return res;
 }
 
-exports.create = async(data) => {
-    
+exports.create = async (data) => {
+
     const product = new Users(data)
-        await product.save();
-    
+    await product.save();
+
 }
 
-exports.update = async(id, data) => {
+exports.update = async (id, data) => {
     await Users
         .findByIdAndUpdate(id, {
             $set: {
@@ -48,7 +48,7 @@ exports.update = async(id, data) => {
         })
 }
 
-exports.delete = async(id) => {
+exports.delete = async (id) => {
     await Users
-    .findByIdAndDelete(id);
+        .findByIdAndDelete(id);
 }
