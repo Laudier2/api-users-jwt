@@ -34,7 +34,7 @@ exports.post = (req, res, next) => {
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
-        password: md5(req.body.password + TOKEN_KEY),
+        password: md5(req.body.password + process.env.TOKEN_KEY),
         imagem: req.body.imagem
     }
 
@@ -61,7 +61,7 @@ exports.post = (req, res, next) => {
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
-            password: md5(req.body.password + TOKEN_KEY),
+            password: md5(req.body.password + process.env.TOKEN_KEY),
             imagem: req.body.imagem
         })
         .then(() => {
