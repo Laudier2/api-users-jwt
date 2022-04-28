@@ -6,7 +6,7 @@ const cors = require('cors')
 require('dotenv').config()
 require('./modules/db')
 
-//const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 
 const app = express();
 
@@ -17,10 +17,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', (req, res) => {
-    res.json({ TITLE: "Laudier" })
-})
-
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 
 module.exports = app;
