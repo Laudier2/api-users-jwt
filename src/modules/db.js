@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
  * utilizando uma variavel de ambiente para mais segurança.
  */
 
-mongoose.connect("mongodb://localhost:27017/Users")
-  //mongoose.connect(process.env.URL_DB)
+//mongoose.connect("mongodb://localhost:27017/Users")
+mongoose.connect(process.env.URL_DB)
 
   /**
    * E abaixo estamos utilizando o .then para acibir umamensage no console caso esteja fucionando corretamente 

@@ -96,6 +96,7 @@ exports.autenticate = async (req, res, next) => {
             data: {
                 email: customer.email,
                 name: customer.name,
+                imagem: customer.imagem,
                 token: token
             }
         })
