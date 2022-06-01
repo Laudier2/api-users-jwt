@@ -8,8 +8,8 @@
     "yarn": "1.22.17"
   },
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

@@ -6,6 +6,8 @@ const cors = require('cors')
 require('dotenv').config()
 require('./modules/db')
 
+const port = process.env.PORT || '3001';
+
 const indexRouter = require('./routes/index');
 
 const app = express();
@@ -18,6 +20,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+app.listen(port, () => {
+    console.info("URL rondando na http://localhost:" + port)
+})
 
 //app.listen(3000)
 
